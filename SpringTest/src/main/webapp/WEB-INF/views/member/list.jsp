@@ -5,10 +5,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>회원목록</title>
 </head>
 <body>
-<h1>/member/list.jsp</h1>
+
 <table border=1>
 	<tr>
 		<td>아이디</td>

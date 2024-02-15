@@ -131,4 +131,20 @@ public class MemberController {
 		}
 		return "redirect:"+addr;
 	}
+	
+	// 회원 목록
+	@GetMapping("list")
+	public String listGET(HttpSession session, Model model) {
+		String id = (String)session.getAttribute("id");
+		String addr = "";
+		if(!id.equals("admin")) {
+			addr = "redirect:/member/main";
+		}
+		if(id.equals("admin")) {
+			model.addAttribute("list", mService.memberList());
+			addr = "/member/list";
+		}
+		return addr;
+	}
+	
 }
