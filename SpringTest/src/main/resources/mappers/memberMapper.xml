@@ -14,7 +14,7 @@
   	<!-- 로그인 -->
   	<select id="loginMember" resultType="MemberVO">
   		select * from tbl_member 
-  		where userid=#{userid} and userpw=#{userpw)
+  		where userid=#{userid} and userpw=#{userpw}
   	</select>
   	
   	<!-- 특정 회원 정보 조회 -->
