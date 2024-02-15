@@ -111,4 +111,24 @@ public class MemberController {
 		return "redirect:"+addr;
 	}
 	
+	// 회원 탈퇴
+	@GetMapping("delete")
+	public void deleteGET() {
+		
+	}
+	
+	@PostMapping("delete")
+	public String deletePOST(MemberVO vo, RedirectAttributes rttr) {
+		String addr = "";
+		int result = mService.deleteMember(vo);
+		if(result == 1) {
+			rttr.addFlashAttribute("msg", "회원 탈퇴가 완료되었습니다.");
+			addr = "/member/login";
+		}
+		if(result != 1) {
+			rttr.addFlashAttribute("msg", "비밀번호가 잘못되었습니다.");
+			addr = "/member/delete";
+		}
+		return "redirect:"+addr;
+	}
 }
