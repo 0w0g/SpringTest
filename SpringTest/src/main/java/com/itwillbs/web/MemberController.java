@@ -68,5 +68,15 @@ public class MemberController {
 		
 	}
 	
+	// 로그아웃
+	@GetMapping("logout")
+	public String logoutGET(HttpSession session, RedirectAttributes rttr) {
+		session.invalidate();
+		
+		rttr.addFlashAttribute("msg","로그아웃 되었습니다.");
+		
+		return "redirect:/member/login";
+	}
+	
 	
 }
