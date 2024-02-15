@@ -86,4 +86,29 @@ public class MemberController {
 		model.addAttribute("member", resultVO);
 	}
 	
+	// 회원 정보 수정
+	@GetMapping("update")
+	public void updateGET(HttpSession session, Model model) {
+		String id = (String)session.getAttribute("id");
+		MemberVO resultVO = mService.getMember(id);
+		model.addAttribute("member", resultVO);
+	}
+	
+	@PostMapping("update")
+	public String updatePOST(MemberVO vo, RedirectAttributes rttr) {
+		String addr = "";
+		
+		int result = mService.updateMember(vo);
+		if(result == 1) {
+			rttr.addFlashAttribute("msg", "회원수정이 완료되었습니다.");
+			addr="/member/main";
+		}
+		if(result != 1) {
+			rttr.addFlashAttribute("msg","비밀번호가 잘못되었습니다.");
+			addr="/member/update";
+		}
+	
+		return "redirect:"+addr;
+	}
+	
 }

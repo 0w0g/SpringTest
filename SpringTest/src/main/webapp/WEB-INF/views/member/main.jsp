@@ -8,6 +8,13 @@
 <title>main</title>
 </head>
 <body>
+<script>
+
+var msg = "${msg}";
+if(msg != ""){
+	alert(msg);
+}
+</script>
 
 	<!-- 로그인 정보가 없는 경유 다시 로그인페이지로 이동 -->
 	<c:if test="${empty sessionScope.id}">
