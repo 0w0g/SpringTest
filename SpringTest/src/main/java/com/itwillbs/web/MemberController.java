@@ -78,5 +78,12 @@ public class MemberController {
 		return "redirect:/member/login";
 	}
 	
+	// 회원 정보 조회
+	@GetMapping("info")
+	public void memberInfoGET(HttpSession session, Model model) {
+		String id = (String)session.getAttribute("id");
+		MemberVO resultVO = mService.getMember(id);
+		model.addAttribute("member", resultVO);
+	}
 	
 }

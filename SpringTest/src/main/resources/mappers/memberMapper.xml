@@ -19,7 +19,7 @@
   	
   	<!-- 특정 회원 정보 조회 -->
   	<select id="getMember" resultType="MemberVO">
-  		select * from tbl_member where id = #{userid}
+  		select * from tbl_member where userid = #{userid}
   	</select>
   	
   	<!-- 회원 정보 수정 -->

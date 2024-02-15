@@ -40,7 +40,7 @@ public class MemberDAOImpl implements MemberDAO {
 	// 특정 회원 정보 조회
 	@Override
 	public MemberVO getMember(String id) {
-		MemberVO resultVO = sqlSession.selectOne(NAMESPACE+"getMember",id);
+		MemberVO resultVO = sqlSession.selectOne(NAMESPACE+".getMember",id);
 		return resultVO;
 	}
 

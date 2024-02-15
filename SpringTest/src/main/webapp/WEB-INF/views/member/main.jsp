@@ -19,8 +19,8 @@
 	id : ${id }<br>
 		
 	<input type="button" value="로그아웃" onclick="location.href='/member/logout'">
-	<a href="/member/logout">로그아웃</a>
-	<a href="javascript:location.href='/member/logout';">로그아웃</a>
+	<!-- <a href="/member/logout">로그아웃</a> -->
+	<!-- <a href="javascript:location.href='/member/logout';">로그아웃</a> -->
 	
 	<hr>
 	
